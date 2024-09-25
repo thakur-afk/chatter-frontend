@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/users/me`, { withCredentials: true })
+      .get(`${server}/api/v1/users/me`, { withCredentials: true })
       .then(({ data }) => dispatch(userExists(data.user)))
       .catch(() => dispatch(userNotExists()));
   }, []);
